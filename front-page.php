@@ -47,7 +47,7 @@ PASSWORD: pia123!
                     
                     </div>
                 </div>
-                    <button class="btnAddToCart">Add to Cart</button>
+                    <button class="btnAddtoCart">Add to Cart</button>
             </div>
 
             <?php endwhile;
@@ -66,7 +66,7 @@ PASSWORD: pia123!
     <div class="food__header flex justify--between align--center">
         <h2>Chicken Joy</h2>
         <span></span>
-        <a href="#">View All</a>
+        <a href="<?php echo site_url('/chicken-joy') ?>">View All</a>
     </div>
     </div>
     <div class="container with--overflow">
@@ -122,7 +122,7 @@ PASSWORD: pia123!
     <div class="food__header flex justify--between align--center">
         <h2>Yum Burger</h2>
         <span></span>
-        <a href="#">View All</a>
+        <a href="<?php echo site_url('/yum-burger') ?>">View All</a>
     </div>
     </div>
     <div class="container with--overflow">
@@ -175,7 +175,7 @@ PASSWORD: pia123!
     <div class="food__header flex justify--between align--center">
         <h2>Breakfast</h2>
         <span></span>
-        <a href="#">View All</a>
+        <a href="<?php echo site_url('/breakfast') ?>">View All</a>
     </div>
     </div>
     <div class="container with--overflow">

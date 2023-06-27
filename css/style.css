@@ -714,15 +714,15 @@ button {
   width: 100%;
   height: auto;
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   -o-object-position: center center;
-     object-position: center center;
+  object-position: center center;
 }
 .food__slider__wrapper .content {
   padding: 1rem 0;
 }
 
-.food__slider__wrapper .content  a{
+.food__slider__wrapper .content a {
   color: #fff;
 }
 
@@ -824,9 +824,9 @@ button {
   width: 30rem;
   height: auto;
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   -o-object-position: center center;
-     object-position: center center;
+  object-position: center center;
 }
 .list .card i {
   color: yellow;
@@ -906,9 +906,9 @@ button {
   width: 30rem;
   height: auto;
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   -o-object-position: center center;
-     object-position: center center;
+  object-position: center center;
 }
 .card .grid {
   display: grid;
@@ -932,18 +932,15 @@ button {
 .card__price p span {
   font-size: 2rem;
   font-weight: bold;
-}/*# sourceMappingURL=main.min.css.map */
-
+} /*# sourceMappingURL=main.min.css.map */
 
 .single__content ul.rating {
   display: flex;
 }
 
-
 .single__content ul.rating li {
-  margin-right: .5rem;
+  margin-right: 0.5rem;
 }
-
 
 .single__content ul.rating i {
   color: orange;
@@ -953,34 +950,35 @@ button {
   min-height: 11rem;
 }
 
-.menu ul{
+.menu ul {
   display: flex;
-  gap: 1.5rem
+  gap: 1.5rem;
 }
 
-.menu ul li a{
+.menu ul li a {
   color: #ffffff;
   font-weight: 700;
   padding: 4px 6px;
   border-radius: 3px;
 }
 
-.menu ul li.current_page_item a{
+.menu ul li.current_page_item a {
   background-color: #f09400;
 }
 
-.cta{
+.cta {
   min-height: 600px;
   background-image: linear-gradient(
-    to right,
-    rgba(0,0,0,0.9),
-    rgba(0,0,0,0)),
-    url('https://www.rappler.com/tachyon/2022/07/Jollibee-SLEX-December-16-2019-10.jpg');
-    background-size: cover;
-    background-position: center -100px;
+      to right,
+      rgba(0, 0, 0, 0.9),
+      rgba(0, 0, 0, 0)
+    ),
+    url("https://www.rappler.com/tachyon/2022/07/Jollibee-SLEX-December-16-2019-10.jpg");
+  background-size: cover;
+  background-position: center -100px;
 }
 
-.cta__wrapper{
+.cta__wrapper {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -990,16 +988,16 @@ button {
   color: #ffffff;
 }
 
-.cta__wrapper h3{
+.cta__wrapper h3 {
   font-size: clamp(20px, 10vw, 40px);
   margin-bottom: 20px;
 }
 
-.cta__wrapper p{
+.cta__wrapper p {
   font-size: 16px;
 }
 
-.cta__wrapper button{
+.cta__wrapper button {
   max-width: 150px;
   width: 100%;
   padding: 12px;
@@ -1011,7 +1009,7 @@ button {
   text-transform: uppercase;
 }
 
-.modal{
+.modal {
   position: fixed;
   width: 100vw;
   height: 100%;
@@ -1022,52 +1020,52 @@ button {
   align-items: center;
 }
 
-.modal.show{
+.modal.show {
   display: flex;
 }
 
-.backdrop{
+.backdrop {
   position: absolute;
   height: inherit;
   width: inherit;
-  background-color: rgba(0,0,0,0.8);
+  background-color: rgba(0, 0, 0, 0.8);
   z-index: -1;
 }
 
-.modal__main{
+.modal__main {
   background-color: #fff;
   padding: 20px;
   max-width: 400px;
   width: 100%;
 }
 
-.modal__header{
+.modal__header {
   margin-bottom: 10px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.modal__header button{
+.modal__header button {
   background-color: transparent;
   cursor: pointer;
   font-size: 20px;
   border: none;
 }
 
-.form__group{
+.form__group {
   margin-bottom: 20px;
 }
 
 .form__group label,
 .form__group input,
-.form__group textarea{
+.form__group textarea {
   display: block;
   width: 100%;
 }
 
 .form__group input,
-.form__group textarea{
+.form__group textarea {
   padding: 10px 16px;
   border: 2px solid #e6e6e6;
   margin-top: 5px;
@@ -1076,16 +1074,16 @@ button {
 }
 
 .form__group input:focus,
-.form__group textarea:focus{
+.form__group textarea:focus {
   border-color: #e3163c;
 }
 
-.form__group textarea{
+.form__group textarea {
   height: 200px;
   resize: none;
 }
 
-input[type="submit"]{
+input[type="submit"] {
   padding: 10px;
   background-color: #f09400;
   border-radius: 5px;
@@ -1094,31 +1092,30 @@ input[type="submit"]{
   border: none;
 }
 
-input[type="submit"]:hover{
+input[type="submit"]:hover {
   background-color: #e3163c;
 }
 
-
 /* ADD TO CART */
-.cart{
+.cart {
   position: fixed;
   width: 300px;
   height: 100vh;
   padding: 6rem 4rem;
-  z-index: 999;
+  z-index: 9999;
   top: 0;
   right: -300px;
   background-color: #fff;
-  box-shadow: -5px 10px 5px 2px rgba(0,0,0,0.2);
-  transition: .5s ease-in-out;
+  box-shadow: -5px 10px 5px 2px rgba(0, 0, 0, 0.2);
+  transition: 0.5s ease-in-out;
 }
 
-.cart.open{
+.cart.open {
   right: 0;
-  transition: .5s ease-in-out;
+  transition: 0.5s ease-in-out;
 }
 
-.cart_close{
+.cart_close {
   position: absolute;
   top: 60px;
   right: 10px;
@@ -1130,15 +1127,15 @@ input[type="submit"]:hover{
   color: #fff;
 }
 
-.cart_close:hover{
+.cart_close:hover {
   background-color: red;
 }
 
-.cart__wrapper{
+.cart__wrapper {
   margin-top: 2rem;
 }
 
-.cartItem{
+.cartItem {
   display: flex;
   align-items: flex-start;
   gap: 2rem;
@@ -1146,14 +1143,14 @@ input[type="submit"]:hover{
   margin-bottom: 10px;
 }
 
-.cartItem img{
+.cartItem img {
   width: 60px;
   height: 60px;
   object-fit: cover;
   object-position: center center;
 }
 
-.cartItem button{
+.cartItem button {
   position: absolute;
   top: 30%;
   left: -10px;
@@ -1169,7 +1166,7 @@ input[type="submit"]:hover{
   color: #fff;
 }
 
-.btnAddToCart{
+.btnAddtoCart{
   display: block;
   padding: 10px 16px;
   background-color: #f09400;
@@ -1181,13 +1178,13 @@ input[type="submit"]:hover{
   margin-top: 5px;
 }
 
-.header__nav{
+.header__nav {
   display: flex;
   align-items: center;
   gap: 30px;
 }
 
-.header__nav button{
+.header__nav button {
   background-color: transparent;
   color: #fff;
   border: none;
@@ -1195,6 +1192,26 @@ input[type="submit"]:hover{
   border-radius: 5px;
 }
 
-.header__nav button:hover{
+.header__nav button:hover {
   background-color: #f09400;
+}
+
+.btnCart {
+  position: relative;
+}
+
+.btnCart .count {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  width: 16px;
+  height: 16px;
+  font-size: 10px;
+  border-radius: 50%;
+  color: #fff;
+  z-index: 999;
+  background-color: #f09400;
+  display: none;
+  justify-content: center;
+  align-items: center;
 }

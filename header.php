@@ -22,7 +22,7 @@
               'theme_location' => 'header_menu',
             ))?>
 
-          <button class="btnCart"><i class="fa-solid fa-cart-shopping"></i></button>
+          <button class="btnCart"><i class="fa-solid fa-cart-shopping"></i><span class="count"></span></button>
           </div>
 
         </div>
