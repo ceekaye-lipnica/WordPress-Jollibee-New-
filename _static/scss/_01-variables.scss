@@ -1,0 +1,31 @@
+$clr-accent: hsl(349, 82%, 49%);
+$clr-secondary: hsl(37, 100%, 47%);
+$clr-dark: hsl(0, 0%, 44%);
+$clr-light: hsl(0, 0%, 100%);
+$clr-border: hsl(0, 0%, 85%);
+$clr-gray: hsl(0, 0%, 96%);
+
+$clr-alert: hsl(0, 75%, 41%);
+$clr-confirm: hsl(213, 75%, 41%);
+$clr-success: hsl(129, 75%, 41%);
+$clr-disabled: hsl(0, 0%, 87%);
+
+$font-primary: "Open Sans", Arial, sans-serif;
+
+$break-sm: 640px;
+$break-md: 768px;
+$break-lg: 1024px;
+$break-xl: 1280px;
+
+$container-padding: 1.5rem;
+$container-width: 127rem;
+$font-size: 1.6rem;
+$header-size: clamp(2rem, 7vw, 3rem);
+
+@function set-color($bg) {
+  @if (lightness($bg) > 50) {
+    @return $clr-dark;
+  } @else {
+    @return $clr-light;
+  }
+}

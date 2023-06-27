@@ -1,0 +1,163 @@
+$alignments: center, right, left, justify;
+@each $alignment in $alignments {
+  .text--#{$alignment} {
+    text-align: $alignment;
+  }
+}
+
+@for $i from 0 through 10 {
+  .mb--#{$i} {
+    margin-bottom: $i + rem;
+  }
+
+  .mt--#{$i} {
+    margin-top: $i + rem;
+  }
+
+  .mr--#{$i} {
+    margin-right: $i + rem;
+  }
+
+  .mx--#{$i} {
+    margin:0 $i + rem;
+  }
+
+  .py--#{$i} {
+    padding: $i + rem 0;
+  }
+
+  .p--#{$i} {
+    padding: $i + rem;
+  }
+
+  
+}
+
+$positions: absolute, relative, static, fixed;
+@each $position in $positions {
+  .#{$position} {
+    position: $position;
+  }
+}
+
+$colors: (
+  "accent": $clr-accent,
+  "dark": $clr-dark,
+  "light": $clr-light,
+  "gray": $clr-gray,
+);
+
+@each $key, $val in $colors {
+  .clr {
+    &--#{$key} {
+      color: $val;
+    }
+  }
+
+  .bg {
+    &--#{$key} {
+      background-color: $val;
+    }
+  }
+
+  
+}
+
+// .btn.bgcolor transparent {
+//   @include btn(transparent) {
+//     color: $clr-dark;
+//     border: 1px solid $clr-dark;
+//   }
+// }
+
+$justify: (
+  "start": flex-start,
+  "center": center,
+  "end": flex-end,
+  "between": space-between,
+  "around": space-around,
+);
+
+@each $key, $val in $justify {
+  .justify {
+    &--#{$key} {
+      justify-content: $val;
+    }
+  }
+}
+
+$text: (
+  "center": center,
+  "left": left,
+  "right": right,
+  "justify": justify,
+);
+
+@each $key, $val in $text {
+  .text {
+    &--#{$key} {
+      text-align: $val;
+    }
+  }
+}
+
+$breakpoints: (
+  "sm": 640px,
+  "md": 768px,
+  "lg": 1024px,
+  "xl": 1280px,
+);
+
+@each $key, $val in $breakpoints {
+  @media screen and (max-width: $val) {
+    @for $i from 1 through 4 {
+      .#{key}-grid-#{$i} {
+        grid-template-columns: repeat($i, 1fr);
+      }
+    }
+  }
+}
+
+$align: (
+  "start": flex-start,
+  "end": flex-end,
+  "center": center,
+  "stretch": stretch,
+  "baseline": baseline,
+);
+
+@each $key, $val in $align {
+  .align {
+    &--#{$key} {
+      align-items: $val;
+    }
+  }
+}
+
+$display: (
+  "flex": flex,
+  "block": block,
+  "inline-b": inline-block,
+  "inline": inline,
+);
+
+@each $key, $val in $display {
+    .#{$key} {
+      display: $val;
+    }
+}
+
+$weight: (
+  "regular" : 400,
+  "bold" : 600,
+  "black" : 900,
+);
+
+@each $key, $val in $weight {
+  .font--#{$key} {
+    font-weight: $val;
+  }
+}
+
+
+  

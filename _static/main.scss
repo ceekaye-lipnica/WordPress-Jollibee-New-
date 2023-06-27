@@ -1,0 +1,26 @@
+@import "./scss/01-variables";
+@import "./scss/02-reset";
+@import "./scss/03-base";
+@import "./scss/04-mixins";
+@import "./scss/05-grid";
+@import "./scss/06-utilities";
+@import "./scss/07-vendor";
+
+// LAYOUT
+@import "./scss/layout/header";
+@import "./scss/layout/footer";
+@import "./scss/layout/sidenav";
+@import "./scss/layout/main";
+@import "./scss/layout/datalist";
+@import "./scss/layout/modal";
+@import "./scss/layout/search";
+
+@import "./scss/components/card";
+@import "./scss/components/btn";
+@import "./scss/components/form";
+@import "./scss/components/spinners";
+@import "./scss/components/loadmore";
+
+// PAGES
+@import "./scss/pages/home";
+@import "./scss/pages/give";

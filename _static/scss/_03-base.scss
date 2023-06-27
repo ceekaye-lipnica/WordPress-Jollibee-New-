@@ -1,0 +1,36 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700;800&display=swap");
+:root {
+  --clr-light: hsl(0, 0%, 100%);
+  --clr-dark: hsl(0, 0%, 11%);
+  --clr-light-1: hsl(0, 0%, 70%);
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: $font-size;
+  font-family: $font-primary;
+  line-height: 1.6;
+  font-size: 1.4rem;
+
+  overflow-x: hidden;
+}
+
+p {
+  margin-bottom: 2rem;
+}
+
+a {
+  text-decoration: none;
+  color: $clr-dark;
+}
+
+img {
+  display: block;
+}
+
+button {
+  cursor: pointer;
+}

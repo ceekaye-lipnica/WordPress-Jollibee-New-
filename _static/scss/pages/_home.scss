@@ -1,0 +1,257 @@
+.food {
+  &__wrapper {
+    width: 100vw;
+  }
+
+  &__header {
+    span {
+      width: 80%;
+      height: 1px;
+      background-color: $clr-border;
+    }
+
+    a {
+      font-weight: bold;
+      color: $clr-accent;
+    }
+  }
+}
+
+.food__slider {
+  &__wrapper {
+    padding: 5rem 0;
+    .inner {
+      width: 278px;
+      position: relative;
+      box-shadow: 2px 2px 5px 3px rgba(0, 0, 0, 0.1);
+    }
+    img {
+      @include imgFit(100%, auto);
+    }
+
+    .content {
+      padding: 1rem 0;
+    }
+
+    .price {
+      position: absolute;
+      top: -2rem;
+      right: -3rem;
+      background-color: $clr-accent;
+      height: 6rem;
+      width: 6rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      text-align: center;
+      p {
+        color: $clr-light;
+        line-height: 1.3;
+        margin-bottom: 0;
+        font-size: 1.2rem;
+        span {
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}
+
+.footer {
+  padding: 4rem 0 0;
+  &__grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+  }
+
+  &__links {
+    ul {
+      li a {
+        font-weight: bold;
+      }
+    }
+
+    .social__media {
+      h3 {
+        font-size: 2rem;
+      }
+
+      a {
+        font-size: 1.8rem;
+      }
+    }
+  }
+
+  &__newsletter {
+    color: $clr-light;
+    .form {
+      display: flex;
+      input {
+        padding: 1.2rem;
+        max-width: 25rem;
+        width: 100%;
+        border: none;
+      }
+      button {
+        background-color: $clr-secondary;
+        padding: 1.2rem 1.5rem;
+        border: none;
+        color: $clr-light;
+      }
+    }
+  }
+
+  .copyright {
+    border-top: 1px solid $clr-light;
+    margin-top: 3rem;
+    p {
+      margin: 0;
+      font-size: 1.2rem;
+    }
+  }
+}
+
+.single__header {
+  margin: 6rem 0;
+  h1 {
+    font-size: clamp(3rem, 7vw, 10rem);
+    font-weight: 900;
+    text-transform: uppercase;
+  }
+  .wrapper {
+    max-width: 75rem;
+    width: 100%;
+    margin: 0 auto;
+  }
+}
+
+.list {
+  margin: 5rem 0;
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(38rem, 1fr));
+    grid-gap: 3rem;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 5rem;
+    grid-gap: 3rem;
+  }
+
+  .card {
+    img {
+      margin: 1rem auto;
+      @include imgFit(30rem, auto);
+    }
+
+    i {
+      color: yellow;
+    }
+    &__price {
+      align-self: flex-end;
+
+      p {
+        font-size: 1.2rem;
+        text-align: center;
+        margin-bottom: 0;
+        line-height: 1.2;
+        span {
+          font-size: 2rem;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}
+
+.single__title h1 {
+  padding: 3rem 0;
+  margin-bottom: 3rem;
+  border-bottom: 1px solid $clr-border;
+}
+.single__wrapper {
+  padding: 8rem 0;
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .single__img img {
+    margin: 0 auto;
+  }
+  h3 {
+    margin-bottom: 1rem;
+  }
+
+  ul {
+    margin-bottom: 2rem;
+    li {
+      margin-right: 2rem;
+      display: flex;
+      align-items: center;
+      input {
+        margin-right: 0.5rem;
+      }
+    }
+  }
+
+  .action {
+    display: flex;
+    justify-content: space-between;
+    button {
+      background: $clr-secondary;
+      padding: 0.8rem 1.2rem;
+      border: none;
+    }
+  }
+}
+
+.other {
+  padding: 5rem 0;
+  h2 {
+    padding: 5rem 0;
+    text-align: center;
+    color: $clr-accent;
+    text-transform: uppercase;
+    font-size: 5rem;
+  }
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(38rem, 1fr));
+    grid-gap: 3rem;
+  }
+}
+.card {
+  img {
+    margin: 1rem auto;
+    @include imgFit(30rem, auto);
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    .card__price {
+      justify-self: flex-end;
+    }
+  }
+
+  i {
+    color: yellow;
+  }
+  &__price {
+    align-self: flex-end;
+
+    p {
+      font-size: 1.2rem;
+      text-align: center;
+      margin-bottom: 0;
+      line-height: 1.2;
+      span {
+        font-size: 2rem;
+        font-weight: bold;
+      }
+    }
+  }
+}

@@ -1,0 +1,47 @@
+@mixin centerAll() {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin grid($cols, $gap) {
+  display: grid;
+  grid-template-columns: repeat($cols, 1fr);
+  grid-gap: ($gap);
+}
+
+@mixin mediaQuery($width: 48rem) {
+  @media screen and (max-width: $width) {
+    @content;
+  }
+}
+
+@mixin imgFit($width: 300px, $height: 300px) {
+  width: $width;
+  height: $height;
+  object-fit: cover;
+  object-position: center center;
+}
+
+
+
+@mixin psuedo($top:0, $left:0) {
+  content: '';
+  position: absolute;
+  left: $left;
+  top: $top;
+}
+
+
+@mixin btn {
+  padding: 1rem 1.6rem;
+  border-radius: 0.5rem;
+  min-width: 10rem;
+  text-align: center;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  transition: .5s ease;
+  border: 1px solid;
+  min-height: 4.5rem;
+}

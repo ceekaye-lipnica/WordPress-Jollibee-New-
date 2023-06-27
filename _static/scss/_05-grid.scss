@@ -1,0 +1,104 @@
+@use "sass:math";
+
+$breakpoints: (
+  "xs": 0,
+  "sm": 48rem,
+  "md": 72rem,
+  "lg": 96rem,
+  "xl": 120rem,
+);
+
+$grid-cols: 12;
+$grid-gap: 1rem;
+
+.container {
+  width: 100%;
+  max-width: $container-width;
+  margin: 0 auto;
+  padding-left: $container-padding;
+  padding-right: $container-padding;
+}
+
+.container.with--overflow {
+  overflow:visible;
+}
+
+// .row {
+//   display: flex;
+//   flex-wrap: wrap;
+// }
+
+// .row > * {
+//   max-width: 100%;
+//   width: 100%;
+// }
+
+// @mixin xs {
+//   @media screen and (min-width: map-get($breakpoints, "xs")) {
+//     @content;
+//   }
+// }
+
+// @mixin sm {
+//   @media screen and (min-width: map-get($breakpoints, "sm")) {
+//     @content;
+//   }
+// }
+
+// @mixin md {
+//   @media screen and (min-width: map-get($breakpoints, "md")) {
+//     @content;
+//   }
+// }
+
+// @mixin lg {
+//   @media screen and (min-width: map-get($breakpoints, "lg")) {
+//     @content;
+//   }
+// }
+
+// @mixin xl {
+//   @media screen and (min-width: map-get($breakpoints, "xl")) {
+//     @content;
+//   }
+// }
+
+// @include xs {
+//   @for $i from 1 through $grid-cols {
+//     .col-xs-#{$i} {
+//       flex: 0 0 math.div($i * 100%, $grid-cols);
+//     }
+//   }
+// }
+
+// @include sm {
+//   @for $i from 1 through $grid-cols {
+//     .col-sm-#{$i} {
+//       flex: 0 0 math.div($i * 100%, $grid-cols);
+//     }
+//   }
+// }
+
+// @include md {
+//   @for $i from 1 through $grid-cols {
+//     .col-md-#{$i} {
+//       flex: 0 0 math.div($i * 100%, $grid-cols);
+//     }
+//   }
+// }
+
+// @include lg {
+//   @for $i from 1 through $grid-cols {
+//     .col-lg-#{$i} {
+//       flex: 0 0 math.div($i * 100%, $grid-cols);
+//     }
+//   }
+// }
+
+// @include xl {
+//   @for $i from 1 through $grid-cols {
+//     .col-xl-#{$i} {
+//       flex: 0 0 math.div($i * 100%, $grid-cols);
+//     }
+//   }
+// }
