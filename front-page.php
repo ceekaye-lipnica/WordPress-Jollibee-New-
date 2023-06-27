@@ -1,5 +1,11 @@
 <?php get_header ()?>
 
+<!-- 
+WORDPRESS ACCOUNT: 
+
+USERNAME: monmon.plaza@gmail.com
+PASSWORD: pia123! 
+-->
 
 <section class="food py--3">
     <div class="container">
