@@ -1,14 +1,23 @@
 <?php get_header()?>
 
-<section class="cta">
-    <div class="container">
-        <div class="cta__wrapper">
-            <h3>Have a question?</h3>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Necessitatibus ducimus eos optio eaque, consequatur perferendis commodi veniam dignissimos laboriosam at?</p>
-            <button id="btnModal">Contact</button>
-        </div>
-    </div>
+<?php if(have_posts()) : while(have_posts()) : the_post()?>
+
+<section class="page__hero">
+    <h1><?php the_title() ?></h1>
 </section>
+
+<div class="full__width">
+    <div class="container">
+        <?php the_content(); ?>
+    </div>
+</div>
+
+<?php
+    endwhile;
+    else: 
+        echo "wala ng post beshy";
+    endif;
+?>
 
 <div class="modal">
     <div class="backdrop"></div>
@@ -25,3 +34,4 @@
 </div>
 
 <?php get_footer()?>
+

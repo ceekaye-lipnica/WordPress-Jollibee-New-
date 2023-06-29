@@ -1108,11 +1108,25 @@ input[type="submit"]:hover {
   background-color: #fff;
   box-shadow: -5px 10px 5px 2px rgba(0, 0, 0, 0.2);
   transition: 0.5s ease-in-out;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
 }
 
 .cart.open {
   right: 0;
   transition: 0.5s ease-in-out;
+}
+
+.cart ul{
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid #e6e6e6;
+  padding-top: 2rem;
+}
+
+.cart ul li:last-child{
+  font-weight: bold;
 }
 
 .cart_close {
@@ -1124,11 +1138,12 @@ input[type="submit"]:hover {
   font-size: 1.5rem;
   padding: 5px 8px;
   border-radius: 2rem;
-  color: #fff;
+  color: #000;
 }
 
 .cart_close:hover {
   background-color: red;
+  color: #fff;
 }
 
 .cart__wrapper {
@@ -1214,4 +1229,61 @@ input[type="submit"]:hover {
   display: none;
   justify-content: center;
   align-items: center;
+}
+
+/* ABOUT US PAGE */
+
+.page__hero{
+  padding: clamp(20px, 6vw, 40px) 0;
+  text-align: center;
+  background-color: red;
+  color: #fff;
+  border-top: 4px solid #f09400;
+}
+
+.page__hero h1{
+  font-size: clamp(30px, 6vw, 45px);
+}
+
+.full__width{
+  padding: clamp(20px, 6vw, 30px) 0;
+}
+
+.full__width p{
+  font-size: 18px;
+}
+
+.two__cols{
+  padding: clamp(20px, 6vw, 40px) 0;
+}
+
+.two__cols__grid{
+  display: flex;
+  gap: 20px;
+}
+
+.two__cols__grid > div{
+  flex-basis: 50%;
+}
+
+.two__cols__grid img{
+  width: 100%;
+  height: 450px;
+  object-fit: cover;
+}
+
+.two__cols__grid h3{
+  color: red;
+  font-size: clamp(18px, 6vw, 30px);
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.two__cols__grid p{
+  font-size: 18px;
+  text-align: justify;
+}
+
+.two__cols.row__reverse .two__cols__grid{
+  flex-direction: row-reverse;
 }

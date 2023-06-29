@@ -36,7 +36,7 @@
         <?php if($menu->have_posts()) : while($menu->have_posts()) : $menu->the_post() ?>
           <div class="card">
             <div class="card__wrapper">
-              <img src="<?php print_r(get_field('image')['url'])?>" alt="" />
+              <img src="<?php echo get_field('image')?>" alt="" />
 
               <div class="grid bg--accent clr--light p--2">
                 <div class="card__content">
@@ -75,3 +75,4 @@
 
 
 <?php get_footer()?>
+

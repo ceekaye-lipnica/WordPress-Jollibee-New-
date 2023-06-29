@@ -13,7 +13,7 @@
     <div class="container">
     <div class="single__wrapper__grid">
         <figure class="single__img">
-        <img src="<?php print_r(get_field('image')['url'])?>" alt="">
+        <img src="<?php echo get_field('image')?>" alt="">
         </figure>
 
         <div class="single__content">
@@ -28,12 +28,14 @@
         <p> <?php the_field('description')?></p>
 
         <h3>Options</h3>
-        <form action="">
-            <ul class="flex">
-            <li><input type="radio" name="option" /> Solo</li>
-            <li><input type="radio" name="option" /> With Drinks</li>
-            </ul>
-        </form>
+        <ul>
+        <?php
+          $options =  get_field('addons') ?>
+              
+          <?php foreach( $options as $option): ?>
+              <li><input type="checkbox" /> <?php echo $option; ?></li>
+          <?php endforeach; ?>
+        </ul>
 
         <div class="action">
             <h2> Php <?php the_field('price')?>.00 </h2>
@@ -65,7 +67,7 @@
 
             <div class="card">
               <div class="card__wrapper">
-                <img src="<?php print_r(get_field('image')['url'])?>" alt="" />
+                <img src="<?php echo get_field('image')?>" alt="" />
 
                 <div class="grid bg--accent clr--light p--2">
                   <div class="card__content">
