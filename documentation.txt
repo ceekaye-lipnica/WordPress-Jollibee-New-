@@ -1,0 +1,55 @@
+HOW TO INSTALL WORDPRESS(HTML/CSS/JS should be ready):
+1. install server(xampp)
+2. donwload wordpress from wordpress.org 
+3. copy and unzip the download file to htdocs
+4. rename the extracted folder(wordpress) with the project name
+5. create database
+    5.1 go to localhost/phpmyadmin
+    5.2 create a new database (remember the name)
+6. Open browser, go to "localhost/PROJECT-NAME"
+7. Select Language > English
+8. Enter database name, database username = "root", database password=""
+9. Enter sitename, username, password for wordpress dasboard account 
+
+
+HOW TO CREATE TEMPLATES: 
+1. go to htdocs > PROJECT-NAME > wp-contents > themes > create project folder
+2. Right click on the  created folder, select GitBash
+3  type in bash command: touch index.php style.css front-page.php 
+        single.php header.php footer.php 404.php functions.php
+
+ACTIVATE PROJECT THEME: 
+1. Open style.css > type (add comment)
+    /* 
+        Theme Name: Project Name
+        Description: 
+        Author: 
+        Version:
+    
+    */
+
+2. Screenshot the project output, crop the image by 1200 x 900, save it inside the theme folder and rename it "screenshot.jpg"
+3. Log in to dashboard, go to appearance > theme > then select the project theme to ACTIVATE
+
+
+TEMPLATING: 
+1. open header.php > copy/paste from top of index.html (<html> to closing tag of </header>)
+2. open footer.php > copy/paste from index.html (<footer> to closing tag of </html>)
+3. open index.php > type:
+    <?php get_header() ?> => return the template from header.php
+    <?php get_footer() ?> => return the template from footer.php
+4. open front-page.php -> copy all code from index.php
+5. Add the CSS/JS
+    5.1 create folder named "style" > create style.css
+    5.2 create folder named "script" > create script.css
+    5.3 copy/paste your css code from static folder to style.css
+    5.4 copy/paste your js code from static folder to script.css
+
+CONNECT JS/CSS:
+1. open header.php > insert "wp_head" inside the <head> Templating
+    <?php wp_head() ?> -> connect your css to the template
+2. open footer.php > insert "wp_footer" on the topline of footer.php, above the </body>
+     <?php wp_footer() ?> -> connect your js to the template
+
+
+CALL YOUR STYLE/SCRIPT USING PHP FUNCTION: 
