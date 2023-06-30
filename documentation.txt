@@ -206,3 +206,128 @@ TYPE OF QUERY:
             'value'  => 'feat-lg',
             'compare' => 'LIKE' ,
 ));
+
+
+CUSTOM POST TYPE:
+1. functions.php
+
+<?php
+
+function jollibee_custom_post(){
+
+    $food_label = array(
+            'name'          => __('Foods' , 'textdomain'),
+            'singular_name' => __('Food' , 'textdomain'),
+            'add_new'       => __('Add Food' , 'textdomain'),
+            'edit_item'     => __('Edit Food' , 'textdomain'),
+            'add_new_item'  => __('Add New Food' , 'textdomain'),
+            'all_items'     => __('Foods' , 'textdomain'),
+    );
+
+    $foods_args = array(
+        'labels' => $food_label,
+        'public' => true,
+        'capability_type' => 'post',
+        'show_ui' => true,
+        'supports' => array('title' 'thumbnail' 'editor' 'custom-fields' 'excerpt'),
+    );
+    register_post_type('foods', $foods_args);
+}
+add_action('init', 'jollibee_custom_post');
+
+New post type should appear on the side menu
+NOTE: Sometimes custom post data are not showing on your template, if this happened, go to Settings > Permalinks
+> select plain then save. After saving, select Post Name then save. This will reset the permalink of all your posts.
+
+
+HOW TO INSTALL PLUGINS: 
+1. go to plugins > add new > search plugins
+2. install then activate
+
+DOWNLOAD WORDPRESS PLUGINS ZIP FILE: 
+1. go to plugins > add new > upload plugins
+2. browse your system file then select and open your plugins zip file
+3. install then activate
+
+COMMON PLUGINS TO USE: 
+1. Contact form 7 -> create a contact form
+2. Smush -> use to upload webp and optimized image 
+3. ACF - advance custom field -> use to add custom fields on your post
+
+CREATE CUSTOM BLOCK:
+NOTE: ACF SHOULD BE INSTALLED PRO Version
+
+1. Register new block
+    1.1 go to functions.php type: 
+        <?php 
+
+        // PANG GAWA NG CUSTOMIZE NA BLOCK OR TEMPLATE
+        function jollibee_register_blocks() {
+            if ( function_exists( 'acf_register_block' ) ) {
+                
+                acf_register_block( array(
+                    'name'          => 'two-columns',
+                    'title'         => __( 'Two Columns' ),
+                    'render_template'   => 'blocks/two-cols.php',
+                    'category'      => 'jollibee-blocks',
+                    'icon'          => 'format-image',
+                    'mode'          => 'edit',
+                    'keywords'      => array( 'grid', 'column')
+                ));
+
+                acf_register_block( array(
+                    'name'          => 'menu-slider',
+                    'title'         => __( 'Menu Slider' ),
+                    'render_template'   => 'blocks/menu-slider.php',
+                    'category'      => 'jollibee-blocks',
+                    'icon'          => 'slides',
+                    'mode'          => 'edit',
+                    'keywords'      => array( 'slider', 'menu')
+                ));
+            } 
+        } 
+
+        add_action('acf/init', 'jollibee_register_blocks' );
+
+=>The code above will register a new block that will appear on the list of custom blocks in ACF
+
+    1.2 Create a block template, name it identical with the render_template
+
+2. Open two-cols.php type: 
+
+            <?php 
+            //Create custom field that will be used inside the template
+            $header = get_field('header');
+            $body = get_field('body');
+            $image = get_field('image');
+            $orientation = get_field('orientation');
+            ?>
+
+            // HTML template of the block. This will be the return HTML code of this block. All custom field should be echo inside this template. 
+            <section class="two__cols <?php echo $orientation; ?>" >
+                <div class="container">
+                    <div class="two__cols__grid">
+
+                        <div class="col__1">
+                            <img src="<?php echo $image; ?>" alt="">
+                        </div>
+                        <div class="col__2">
+                            <h3><?php echo $header; ?></h3>
+                            <?php echo $body; ?>
+                        </div>
+
+                    </div>
+                    
+                </div>
+            </section>
+
+3. Create custom field on ACF: 
+    3.1 add new field groups and  add fields. Name should use in the template should be identical with the name of the field.
+    3.2 Under the settings. Rules: 
+        show this field group if = block
+        select the registered block on the third dropdown menu
+    3.3 click save
+
+4. Go to post > add block > select the new created block > complete all 
+
+
