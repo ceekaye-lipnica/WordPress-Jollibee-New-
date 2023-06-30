@@ -53,3 +53,156 @@ CONNECT JS/CSS:
 
 
 CALL YOUR STYLE/SCRIPT USING PHP FUNCTION: 
+1. on functions.php type: 
+
+<?php
+
+function PROJECT-NAME_assets(){
+    // wp_enqueue_style -> load your css assets
+    wp_enqueue_style('PROJECT-NAME-style', get_template_directory_uri() . "./css/style.css", microtime());
+    wp_enqueue_style('PROJECT-NAME-icons', "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css", 1.0);
+    wp_enqueue_style('PROJECT-NAME-slider-style', "https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/tiny-slider.css", 1.0);
+
+    // wp_enqueue_script -> load your js assets
+    wp_enqueue_script('PROJECT-NAME-slider-js', 'https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/min/tiny-slider.js', 1.0, [], true );
+    wp_enqueue_script('PROJECT-NAME-script', get_template_directory_uri() . "./script/script.js", microtime(), [], true );
+
+    //conditional loading of assets base on the current page
+    if(is_front_page()) {
+    wp_enqueue_script('PROJECT-NAME-slider', get_template_directory_uri() . "./script/slider.js", microtime(), [], true );
+    }
+}
+//Hook that will run this function
+add_action('wp_enqueue_scripts', 'PROJECT-NAME_assets');
+
+NOTE: If CSS/JS do not load, press ctrl + F5 and check if wp_head() and wp_footer() are included on header.php/footer.php
+
+
+HOW TO OUTPUT POST LIST TEMPLATE: 
+1. open home.php > add get_header() and get_footer()
+2. create a WordPress query between the above functions
+
+    <?php if(have_posts()) : while(have_posts()) : the_post();?>
+    
+        //INSERT HTML TEMPLATE
+    
+    <?php
+        endwhile;
+        else: 
+            echo "No post";
+        endif;
+    ?>
+
+
+FUNCTIONS TO VIEW POST INFORMATION:
+1. the_title() -> output the post the title
+2. the_content() -> output the post body
+3. the_permalink() -> output the post url
+4. the_excerpt() -> output the post excerpt 
+5. echo get_the_date('M j, Y') -> output the data
+6. echo get_the_category($id)[0] -> name -> output the post category(array)
+7. echo wp_trim_words(get_the_content(), 20) -> limit the number of words for the excerpt or contents
+8. echo get_the_author_meta('first_name') -> output the author
+
+
+HOW TO ADD THEME SUPPORT: 
+1. open functions.php 
+
+        <?php
+        function blog_support(){
+        add_theme_support('post-thumbnails'); // ADD FEATURED IMAGE
+        add_theme_support('menus'); // ADD MENUS
+        add_theme_support('title'); // ADD PAGE TITLE
+        add_theme_support('custom-logo'); // ADD CUSTOM LOGO
+        
+        add_image_size('banner-sm', 220, 150, true ); // CREATE CUSTOM POST THUMBNAIL SIZE
+
+        //CREATE A NAV LOCATIONS
+        register_nav_menu( 'header_menu', 'Header Menu');
+        register_nav_menu( 'footer_menu', 'Footer Menu');
+    }
+
+    add_action('after_setup_theme', 'blog_support');
+
+
+HOW TO USE THEME SUPPORT ON A TEMPLATE: 
+1. post-thumbnails
+    <?php if(has_post_thumbnail()){
+        the_post_thumbnail();
+    } ?>
+2. menu -> go to appearance menus
+3. title -> go to header.php > add<title><is_front_page ? blogInfo('title) : wp_title()></title>
+4. custom Logo -> go to header.php > replace static logo with: 
+    <?php if ( function_exists( 'the_custom_logo' ) ) {
+            the_custom_logo();
+    }?>
+    4.1 on the top nav bar > customize > Site Identity > click select logo
+    4.2 on the top nav bar > customize > Site Identity > click select icon -> favicon
+
+5. add_image_size -> this is inserted as parameter of the_post_thumbnail('ADD_IMAGE_SIZE_TITLE'). see line 118.
+6. register_nav_menu -> go to appearance > menu > create menu > manage menu locations 
+
+
+
+HOW TO ADD NAV MENUS:
+1. go to header.php > replace static nav with:
+     <?php wp_nav_menu( array(
+              'theme_location' => 'header_menu',
+    ))?>
+
+
+HOW TO CREATE SINGLE POST TEMPLATE: 
+1. go to single.php
+    
+    <?php if(have_posts()) : while(have_posts()) : the_post();?>
+    
+        //INSERT HTML TEMPLATE
+    
+    <?php
+        endwhile;
+        else: 
+            echo "No post";
+        endif;
+    ?>
+
+
+CREATE CUSTOME QUERY: 
+1. Create variable that will holds the arguments use on the query
+    $args = WP_Query(array(
+        'post_type' => 'post' //this can be 'post', 'page', 'custome post type'
+        'posts_per_page' => 3 // limit of post to be showed. -1 to show all post
+    ))
+
+     <?php if($args->have_posts()) : while($args->have_posts()) :  $args->the_post();?>
+    
+        //INSERT HTML TEMPLATE
+    
+    <?php
+        endwhile;
+        else: 
+            echo "No post";
+        endif;
+        wp_reset_postdata // ensure that the query is properly reset
+    ?>
+
+
+TYPE OF QUERY: 
+1. tax_query => array(array(
+    'taxonomy' => 'category',
+    'field' => 'slug', //name or slug
+    'terms' => 'card-lg-banner',
+));
+
+2. 'date_query' => array( //use to filter by date_query
+        array(
+            'after' => 'June 22, 2023'
+            'before'  => 'June 25, 2023'
+            inclusive => true //para kasama yung june 22 & 25. Hindi lang yung between sa dates
+));
+
+3. 'meta_query' => array( // use to filter custom fields
+        array(
+            'key'  => 'feat-size',
+            'value'  => 'feat-lg',
+            'compare' => 'LIKE' ,
+));
